@@ -1,0 +1,17 @@
+kind: pipeline
+name: default
+
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    registry: docker.pkg.github.com
+    username: Spharax
+    password:
+      from_secret: docker_token
+    repo: docker.pkg.github.com/spharax/smp-webapp-dev/api
+    tags:
+      - latest
+      - '1.0.0'
+      - '1.0'
+      - '1'
